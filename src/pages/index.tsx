@@ -14,7 +14,7 @@ export default function Home() {
     useCountries();
 
   return (
-    <div className=" h-screen px-4 py-8 bg-black text-white" id="container">
+    <div className=" h-screen px-4 py-8" id="container">
       <div className="flex flex-col gap-4" id="page-title">
         <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center">
           Countries of the World
