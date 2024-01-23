@@ -12,7 +12,6 @@ For a detailed technical overview, contact me :)
 1. Create a `.env.local` file in the root folder of the project and add the following values:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3000
 NEXT_PUBLIC_GRAPHQL_API_URL=https://countries.trevorblades.com/
 ```
 2. Run the following command to install project dependencies:
