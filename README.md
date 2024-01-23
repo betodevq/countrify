@@ -9,7 +9,7 @@ For a detailed technical overview, contact me :)
 
 ## Getting Started
 
-1. Create a `.env.local` file in the root folder of the project and add the following values:
+1. Create a `.env.local` file in the root folder of the project and add the following value:
 
 ```env
 NEXT_PUBLIC_GRAPHQL_API_URL=https://countries.trevorblades.com/
