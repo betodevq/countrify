@@ -64,9 +64,9 @@ export const useCountries = () => {
   const handleCountryClick = async (newCode: string) => {
     if (newCode === country?.code) return;
     try {
-      const { data } = await getCountry({ variables: { code: newCode } });
-      if (data) {
-        setCountry(data.country);
+      const countryQuery = await getCountry({ variables: { code: newCode } });
+      if (countryQuery?.data?.country) {
+        setCountry(countryQuery.data.country);
       }
     } catch (error) {
       console.error("Error refetching country:", error);
