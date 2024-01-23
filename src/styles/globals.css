@@ -33,11 +33,6 @@ body {
   }
 }
 
-.leaflet-container{
-  height: 70vh;
-  width: 70vw;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;

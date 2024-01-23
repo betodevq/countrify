@@ -21,13 +21,23 @@ L.Icon.Default.mergeOptions({
 interface MapProps {
   handleCountryClick: (countryCode: string) => void;
   countries: CountriesResponse[];
+  className?: string;
 }
 
-export default function Map({ countries, handleCountryClick }: MapProps) {
+export default function Map({
+  countries,
+  handleCountryClick,
+  className = "",
+}: MapProps) {
   const position: LatLngExpression = { lat: 0, lng: 0 }; // Updated coordinates to center of USA
   console.log(countries);
   return (
-    <MapContainer zoom={2} center={position} scrollWheelZoom={true}>
+    <MapContainer
+      className={className}
+      zoom={2}
+      center={position}
+      scrollWheelZoom={true}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
