@@ -1,9 +1,4 @@
-// lib/services/apiService.js
-const BASE_URL = "http://localhost:3000";
-
-interface RequestOptions {
-  endpoint: string;
-}
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const baseFetch = {
   get: async <T>(endpoint: string): Promise<T> => {

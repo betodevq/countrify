@@ -1,6 +1,7 @@
 // Libraries
 import { useState, useEffect } from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql, useLazyQuery } from "@apollo/client";
+import { NetworkStatus } from "@apollo/client";
 
 // Services
 import client from "lib/services/graphqlClient";
@@ -38,11 +39,13 @@ interface CountryQueryResult {
 export const useCountries = () => {
   const [countries, setCountries] = useState<CountriesResponse[]>([]);
   const [country, setCountry] = useState<CountryType | null>(null);
-  const { loading, error, data, refetch } = useQuery<CountryQueryResult>(
+  const [getCountry, { error, loading }] = useLazyQuery<CountryQueryResult>(
     GET_COUNTRY,
     {
       client,
-      skip: true,
+      onError: () => {
+        setCountry(null);
+      },
     }
   );
 
@@ -61,12 +64,16 @@ export const useCountries = () => {
 
   const handleCountryClick = async (newCode: string) => {
     if (newCode === country?.code) return;
-
-    const { data } = await refetch({ code: newCode });
-    if (data) {
-      setCountry(data.country);
+    try {
+      const { data } = await getCountry({ variables: { code: newCode } });
+      if (data) {
+        setCountry(data.country);
+      }
+    } catch (error) {
+      console.error("Error refetching country:", error);
     }
+    console.log("!!!!!!!!!!!!!!!!!!!! error", error);
   };
 
-  return { countries, country, loading, error, handleCountryClick };
+  return { countries, country, error, loading, handleCountryClick };
 };

@@ -30,7 +30,6 @@ export default function Map({
   className = "",
 }: MapProps) {
   const position: LatLngExpression = { lat: 0, lng: 0 }; // Updated coordinates to center of USA
-  console.log(countries);
   return (
     <MapContainer
       className={className}
