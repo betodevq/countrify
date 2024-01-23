@@ -15,7 +15,7 @@ export default function CountryInfo({ country }: CountryProps) {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className=" text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center dark:text-white">
+      <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center text-white">
         {country.name}
       </h1>
       <div className="text-xl flex flex-col gap-4">
