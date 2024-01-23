@@ -1,7 +1,6 @@
 // Libraries
 import { useState, useEffect } from "react";
-import { useQuery, gql, useLazyQuery } from "@apollo/client";
-import { NetworkStatus } from "@apollo/client";
+import { gql, useLazyQuery } from "@apollo/client";
 
 // Services
 import client from "lib/services/graphqlClient";
@@ -72,7 +71,6 @@ export const useCountries = () => {
     } catch (error) {
       console.error("Error refetching country:", error);
     }
-    console.log("!!!!!!!!!!!!!!!!!!!! error", error);
   };
 
   return { countries, country, error, loading, handleCountryClick };

@@ -13,7 +13,6 @@ export default function Home() {
   const { countries, country, loading, error, handleCountryClick } =
     useCountries();
 
-  console.log({ error, loading });
   return (
     <div className=" h-screen px-4 py-8" id="container">
       <div className="flex flex-col gap-4" id="page-title">
