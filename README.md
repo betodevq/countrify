@@ -1,5 +1,7 @@
-# countrify
+# Countrify
 ![image](https://github.com/betodevq/countrify/assets/37468432/57715802-8cd3-4de4-ad9c-76edff11973a)
+
+If you want to check out the live page go to: https://countrify-nu.vercel.app/
 
 ## Project Overview
 
